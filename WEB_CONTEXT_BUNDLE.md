@@ -74,7 +74,27 @@ This file is generated from repository truth and bounded for the web channel. It
       "web_status": "active"
     }
   ],
-  "attempts": [],
+  "attempts": [
+    {
+      "artifacts": [],
+      "attempt_id": "attempt:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-source-fidelity-01",
+      "claims": [],
+      "completed_at": null,
+      "generator": "trusted-rolling-source-admission-v1",
+      "inputs": [
+        "problem-library/records/canonical-problems.jsonl",
+        "https://www.unsolvedmath.com/problems/OPG-480"
+      ],
+      "lifecycle": "planned",
+      "method": "discovery",
+      "objective": "Close the source-fidelity obligation before attempting the frozen root statement.",
+      "obligation_graph_id": "graph:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-v1",
+      "problem_contract_sha256": "a80aaa2f9cede5a0aca6ac6c5bbc1c73a9b82f9e459305562fb53526023e687f",
+      "problem_id": "problem:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df",
+      "route_id": "route:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-source-fidelity",
+      "started_at": "2026-09-06T15:37:58Z"
+    }
+  ],
   "failed_routes": [],
   "knowledge_operators": [
     {
@@ -203,77 +223,123 @@ This file is generated from repository truth and bounded for the web channel. It
       "source_id": "sagemath"
     }
   ],
-  "obligation_graphs": [],
+  "obligation_graphs": [
+    {
+      "attempt_id": "attempt:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-source-fidelity-01",
+      "graph_id": "graph:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-v1",
+      "obligations": [
+        {
+          "dependencies": [
+            "obligation:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-statement-fidelity"
+          ],
+          "kind": "root_claim",
+          "obligation_id": "obligation:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-root",
+          "statement": {
+            "formal_declaration": null,
+            "language": "en",
+            "text": "Conjecture If $G$ is a finite $r$-regular graph, where $r > 2$, then $G$ is not uniquely hamiltonian."
+          },
+          "statement_sha256": "4283862d06c58c343400c9ebd1835311b8f4ab77967243bf526773b585fcd65e"
+        },
+        {
+          "dependencies": [],
+          "kind": "definition",
+          "obligation_id": "obligation:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-statement-fidelity",
+          "statement": {
+            "formal_declaration": null,
+            "language": "en",
+            "text": "Verify against the cited source that the frozen statement is complete, current, untruncated, attribution-correct, and unambiguous enough for mathematical research; record any definition or quantifier gap without silently editing the contract."
+          },
+          "statement_sha256": "65f0b3d574bd6d837403149dab6434c0f571709f7eb5bb066c7e8774bad13f34"
+        }
+      ],
+      "root_obligation_id": "obligation:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-root",
+      "route_id": "route:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df-source-fidelity"
+    }
+  ],
   "problem_contract": {
     "acceptance": {
       "policy": "solution-admission-v1"
     },
-    "aliases": [],
+    "aliases": [
+      "UnsolvedMath OPG-480"
+    ],
     "allowed_axioms": [
-      "none"
+      "classical-mathematics",
+      "source-explicit-definitions-only"
     ],
     "assumptions": [
-      "This record must never be treated as an active research problem."
+      "No assumptions beyond those explicitly present in the exact source statement are admitted.",
+      "Statement-faithfulness and current-status review must close before the root mathematical obligation can close."
     ],
     "constraints": {
       "allowed_adapters": [
-        "template-validation-v1"
+        "source-fidelity-review-v1",
+        "lean-obligation-v1"
       ],
       "allowed_methods": [
-        "discovery"
+        "discovery",
+        "derivation",
+        "computation",
+        "proof",
+        "formalization"
       ],
-      "max_attempts": 1,
+      "max_attempts": 20,
       "runtime": {
-        "max_output_bytes": 65536,
-        "max_retries": 1,
-        "max_transitions": 10,
-        "timeout_seconds": 60
+        "max_output_bytes": 5242880,
+        "max_retries": 3,
+        "max_transitions": 300,
+        "timeout_seconds": 1800
       }
     },
-    "created_at": "2026-09-06T00:00:00Z",
+    "created_at": "2026-09-06T15:37:58Z",
     "definitions": [
       {
-        "definition": "A non-admitted draft record used only to validate the physical public repository template.",
-        "term": "template placeholder"
+        "definition": "Use the statement, notation, terminology, and quantifier scope exactly as given by the cited source record. No unstated normalization or strengthening is admitted; ambiguity blocks Result admission until a versioned ProblemContract update.",
+        "term": "source-native interpretation"
       }
     ],
     "domain": {
-      "description": "Template-only placeholder domain; not a mathematical research question.",
+      "description": "Source-native Graph Theory problem. Mathematical objects and notation are exactly those explicitly present in the frozen source statement.",
       "objects": [
-        "template-placeholder"
+        "objects and notation explicitly named in the frozen source statement"
       ]
     },
-    "lifecycle": "draft",
+    "lifecycle": "active",
     "msc": [
-      "00A00"
+      "05C99"
     ],
-    "problem_id": "problem:template-placeholder",
+    "problem_id": "problem:um-opg-480-r-regular-graphs-are-not-uniquely-hami-a9e3f0df",
     "quantifiers": [
       {
-        "domain": "a reviewed public canonical ProblemContract supplied by the repository builder",
-        "kind": "find",
-        "variables": [
-          "replacement_problem"
-        ]
+        "domain": "truth of the exact frozen source statement under its explicit quantifiers",
+        "kind": "decide",
+        "variables": []
       }
     ],
     "schema_version": "1.0.0",
     "sources": [
       {
-        "retrieved_at": "2026-09-06T00:00:00Z",
-        "source": "Vibe Mathing public Web Harness",
-        "source_record_id": "public-template-placeholder-v1",
-        "url": "https://github.com/vibemathing/vibe-mathing-problem-public-template"
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath dataset contributors (CC BY 4.0)",
+        "source_record_id": "unsolvedmath-opg-480-f0340741fd96",
+        "url": "https://www.unsolvedmath.com/problems/OPG-480"
+      },
+      {
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath dataset license",
+        "source_record_id": null,
+        "url": "https://creativecommons.org/licenses/by/4.0/"
       }
     ],
     "statement": {
       "language": "en",
-      "text": "This is a non-research placeholder. Replace it with exactly one reviewed public ProblemContract before creating a public problem repository.",
+      "text": "Conjecture If $G$ is a finite $r$-regular graph, where $r > 2$, then $G$ is not uniquely hamiltonian.",
       "version": 1
     },
-    "title": "Vibe Mathing public problem repository template placeholder",
-    "updated_at": "2026-09-06T00:00:00Z"
+    "title": "r-regular graphs are not uniquely hamiltonian.",
+    "updated_at": "2026-09-06T15:37:58Z"
   },
-  "problem_contract_sha256": "e64cd03254e03dd661eade23243c3c21793fc2d8bffa2d33c172cf8ed2e7f940"
+  "problem_contract_sha256": "a80aaa2f9cede5a0aca6ac6c5bbc1c73a9b82f9e459305562fb53526023e687f"
 }
 ```
